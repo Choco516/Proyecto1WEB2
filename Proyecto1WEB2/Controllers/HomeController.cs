@@ -11,10 +11,19 @@ namespace Proyecto1WEB2.Controllers
         //
         // GET: /Home/
 
-        public ActionResult Index()
+        public ActionResult Home()
         {
             return View();
         }
 
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        public ActionResult Recommend()
+        {
+            return View();
+        }
     }
 }
