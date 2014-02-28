@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/bootstrapcss")
+    @Styles.Render("~/Content/css/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/js/bootstrap") 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs") 
+</head>
+     <style type="text/css"> 
+      body{ 
+              background-image: url(Content/images/perforated-metal-4085.png); 
+              background-repeat: repeat; 
+              background-size: initial; 
+          } 
+     </style>
+<body>
+    @RenderBody()
+    
+    <ul class="nav navbar-default navbar-static-top nav-justified navbar-fixed-top navbar-inverse" role="navigation">
+    <li class="active"><a href="#">Principal</a></li>
+    <li class="flip"><a href="#">Curriculum</a></li>
+    <li class="active"><a href="#">Comentarios</a></li>
+    </ul>
+</body>
+</html>

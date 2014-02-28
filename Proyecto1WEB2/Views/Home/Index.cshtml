@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".flip").click(function() {
+                $(".panel").slideToggle("slow");
+            });
+        });
+    </script>
+ 
+    <style type="text/css">
+    div.panel,p.flip {
+        margin: 50px;
+        padding: 5px;
+        text-align: center;
+        background: #ddd;
+        border: solid 1px #fff;
+    
+    }
+ 
+    div.panel {
+        widht: 100%;
+        height: 1300px;
+        display: none;
+    }
+    </style>
+    <!-- styles -->
+    @Styles.Render("~/Content/bootstrap.min.css", "~/Content/bootstrap.min.css")
+
+    <ul class="nav navbar-default navbar-static-top nav-justified navbar-fixed-top navbar-inverse" role="navigation">
+    <li class="active"><a href="#">Principal</a></li>
+    <li class="flip"><a href="#">Curriculum</a></li>
+    <li class="active"><a href="#">Comentarios</a></li>
+    </ul>
+    
+      <div class="panel">
+          <br>
+          <h1>Curriculumm Vitae</h1>
+          <br>
+          <img src="Content/images/970887_4906042370956_403479832_n.png" width="200px"/>
+          <h2>Datos personales</h2>
+          <h3>Nombre: Elvis Rocha Boza</h3> 
+          
+          <h3>Cédula: 206880179</h3> 
+          <h3>Estado civil: Soltero</h3> 
+		  <br>
+          <h2>Experiencia profesional</h2>
+          <br>
+          <h3>2010-2014	Productos Hortícolas Norteños SA</h3>
+          <h3>Cargo:	Encargado de logística de exportación</h3>
+          <h3>Función:	Llevo toda la documentación de aduanas, navieras y documentación necesaria para realizar exportaciones a USA, Europa, Puerto Rico etc.</p>
+          <br>
+          <h2>Formación académica</h2>
+          <br>
+          <h3>2003-2009	COTAI</h3>
+   		  <h3>Bachillerato educación media</h3>
+          <h3>2010-2014	UTN</h3>
+       	  <h3>Ingeniería en computación.</h3>
+          <br>
+          <h2>Otros datos</h2>
+          <br>
+          <h3>Idiomas	Inglés: Nivel medio NLC</h3>
+          <h3>Informática	Programa.  Paquete Microsoft</h3>
+          <h3>Otra Información	Cisco CCNA 1</h3>
+          <br>
+          <div align="center">
+        <div class="flip"
+            style="font-family: verdana; padding: 10px; border-radius: 10px; border: 3px solid #EE872A; width: 10%; font-size: 12px;">
+            Cerrar<br>
+        </div>
+              <br><br>
+    </div>
+    </div>
+
