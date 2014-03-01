@@ -1,26 +1,60 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<br/>
-<br/>
-<br/>
-
-<form role="form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Nombre</label>
-    <input type="text" class="form-control" id="name" placeholder="Nombre">
-  </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Correo Electrónico</label>
-    <input type="email" class="form-control" id="email" placeholder="Correo">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" class="form-control" id="password" placeholder="Contraseña">
-  </div>
-    <div>
-        <textarea class="form-control" rows="3"></textarea>
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".panel").slideToggle("slow");
+        });
+    </script>
+ 
+    <style type="text/css">
+    div.panel,p.flip {
+        padding: 5px;
+        background: #ddd;
+        border: solid 1px #fff;
+        width:60%;
+        height: auto;
+        display: none;
+        position: absolute;
+        top: 50%; /* Buscamos el centro horizontal (relativo) del navegador */
+        left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
+        margin-top: -220px; /* Restamos la mitad de la altura del objeto con un margin-top */
+        margin-left: -400px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+    }
+ 
+    </style>
+    <!-- styles -->
+    @Styles.Render("~/Content/bootstrap.min.css", "~/Content/bootstrap.min.css")
+    
+      <div class="panel" style="text-align: left";>
+          <br>
+          <form role="form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Write your name">
+              </div>
+                <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Write your email address">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Write your password">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+              </div>
+                <div>
+                    <textarea id="message" class="form-control" rows="5"></textarea>
+                </div>
+              <br>
+              <button type="submit" class="btn pull-right">Enviar Correo</button>
+        </form>
+          <br>
     </div>
-  
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+
+
+
+

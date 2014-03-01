@@ -6,14 +6,14 @@ using System.Web;
 
 namespace Proyecto1WEB2.Models
 {
-    public class ComentarioDb : DbContext
+    public class RecommendationDb : DbContext
     {
-        public ComentarioDb()
+        public RecommendationDb()
             : base("DefaultConnection")
         {
 
         }
 
-        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<Recommendation> Recommendations { get; set; }
     }
 }

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Recommendatios";
+}
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".panel").slideToggle("slow");
+        });
+    </script>
+ 
+    <style type="text/css">
+    div.panel,p.flip {
+        padding: 5px;
+        background: #ddd;
+        border: solid 1px #fff;
+        width:60%;
+        height: auto;
+        display: none;
+        position: absolute;
+        top: 50%; /* Buscamos el centro horizontal (relativo) del navegador */
+        left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
+        margin-top: -220px; /* Restamos la mitad de la altura del objeto con un margin-top */
+        margin-left: -400px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+    }
+
+ 
+    </style>
+    @Styles.Render("~/Content/bootstrap.min.css", "~/Content/bootstrap.min.css")
+ <h2>Recomendations</h2>
+        @foreach (var item in ViewBag.recommendations)
+        {
+            <div class="panel" style="text-align: left";>
+                <div class="form-group">
+                    <br>
+                    <label>Name: @item.Name</label>
+                    <br>
+                    <label>Phone: @item.Phone</label>
+                    <br>
+                    <label>Email: @item.Email </label>
+                    <br>
+                    <label>Recommendation:</label>
+                    <div>
+                        <textarea name="recomendation1" class="form-control" rows="5" disabled>@item.Recomendation1</textarea>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        }
