@@ -41,12 +41,11 @@ namespace Proyecto1WEB2.Controllers
             newEmail.BodyEncoding = System.Text.Encoding.UTF8;
             newEmail.IsBodyHtml = false;
 
-            //Aquí es donde se hace lo especial
             SmtpClient client = new SmtpClient();
             client.Credentials = new System.Net.NetworkCredential(email, password);
             client.Port = 587;
             client.Host = "smtp.gmail.com";
-            client.EnableSsl = true; //Esto es para que vaya a través de SSL que es obligatorio con GMail
+            client.EnableSsl = true; 
             try
             {
                 client.Send(newEmail);

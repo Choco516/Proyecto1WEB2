@@ -12,22 +12,22 @@
     <style type="text/css">
     div.panel,p.flip {
         padding: 5px;
-        background: #ddd;
+        background-image: url('http://4.bp.blogspot.com/_oJpV6yalpOk/TTLRKm-pdzI/AAAAAAAACiU/jo7CkZd1xuk/s1600/The-best-top-desktop-hd-dark-black-wallpapers-dark-black-wallpaper-dark-background-dark-wallpaper-23.jpg'); 
         border: solid 1px #fff;
         width:60%;
         height: auto;
         display: none;
         position: absolute;
-        top: 50%; /* Buscamos el centro horizontal (relativo) del navegador */
-        left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
-        margin-top: -220px; /* Restamos la mitad de la altura del objeto con un margin-top */
-        margin-left: -400px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+        top: 50%; 
+        left: 50%; 
+        margin-top: -220px; 
+        margin-left: -400px; 
+        color: white;
     }
 
- 
     </style>
-    @Styles.Render("~/Content/bootstrap.min.css", "~/Content/bootstrap.min.css")
-          @using (Html.BeginForm()) {
+ @Styles.Render("~/Content/bootstrap.min.css", "~/Content/bootstrap.min.css")
+@using (Html.BeginForm()) {
           <fieldset>
           <legend>Contact</legend>    
             <div class="panel" style="text-align: left";>
@@ -54,14 +54,13 @@
                         </div>
                       <br>
                       <p>
-                          <input type="submit" value="Send email" />
+                          <input style="background:#151515" class="btn pull-right" type="submit" value="Send email" />
                       </p>
-                      
                 </form>
             </div>
           <br>
           </fieldset>
-          }
+}
 
 
 
