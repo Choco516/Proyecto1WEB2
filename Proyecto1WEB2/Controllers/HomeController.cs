@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using Proyecto1WEB2.Models;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime; 
 
 namespace Proyecto1WEB2.Controllers
 {
@@ -21,6 +24,38 @@ namespace Proyecto1WEB2.Controllers
 
         public ActionResult Contact()
         {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Contact(string name = "", string email = "",  string password="", string message = "")
+        {
+            System.Net.Mail.MailMessage newEmail = new System.Net.Mail.MailMessage();
+            newEmail.To.Add("elvistry@gmail.com");
+            newEmail.From = new MailAddress(email, name, System.Text.Encoding.UTF8);
+            newEmail.Subject = "Curriculum";
+            newEmail.SubjectEncoding = System.Text.Encoding.UTF8;
+            newEmail.Body = message;
+            newEmail.BodyEncoding = System.Text.Encoding.UTF8;
+            newEmail.IsBodyHtml = false;
+
+            //Aquí es donde se hace lo especial
+            SmtpClient client = new SmtpClient();
+            client.Credentials = new System.Net.NetworkCredential(email, password);
+            client.Port = 587;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true; //Esto es para que vaya a través de SSL que es obligatorio con GMail
+            try
+            {
+                client.Send(newEmail);
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+            }
             return View();
         }
 
@@ -50,7 +85,7 @@ namespace Proyecto1WEB2.Controllers
             {
                 db.Recommendations.Add(newRecommendation);
                 db.SaveChanges();
-                return RedirectToAction("Home");
+                return RedirectToAction("Recommendations");
             }
             return View();
         }
